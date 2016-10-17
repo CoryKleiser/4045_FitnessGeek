@@ -12,25 +12,25 @@ import org.springframework.context.annotation.Scope;
 @Scope("session")
 public class Activity {
 	
-	private String activityTypeName;
-	private int activityTypeId;
+	private String activityName;
+	private int activityId;
 	private Date dateCompleted;
 	private float totalTrackingAmount;
 	private float goalAmount;
 	ActivityHistory activityHistory;
 	
-	public String getActivityTypeName() {
-		return activityTypeName;
+	public String getActivityName() {
+		return activityName;
 	}
-	public void setActivityTypeName(String activityTypeName) {
-		this.activityTypeName = activityTypeName;
+	public void setActivityName(String activityName) {
+		this.activityName = activityName;
 	}
 	
-	public int getActivityTypeId() {
-		return activityTypeId;
+	public int getActivityId() {
+		return activityId;
 	}
-	public void setActivityTypeId(int activityTypeId) {
-		this.activityTypeId = activityTypeId;
+	public void setActivityId(int activityId) {
+		this.activityId = activityId;
 	}
 	
 	public Date getDateCompleted() {
