@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.fitnessgeek.dto.User" table="user" catalog="fitness_geek">
+		<id name="userId" type="java.lang.Integer">
+			<column name="user_id" />
+		</id>
+		<property name="userName" type="string">
+			<column name="user_name" length="40" not-null="true" unique="true" />
+		</property>
+		<property name="password" type="string">
+			<column name="password" length="40" not-null="true" unique="false" />
+		</property>
+		<property name="firstName" type="string">
+			<column name="first_name" length="40" not-null="true" unique="false" />
+		</property>
+		<property name="lastName" type="string">
+			<column name="last_name" length="40" not-null="false" unique="false" />
+		</property>
+		<property name="email" type="string">
+			<column name="email" length="100" not-null="false" unique="true" />
+		</property>
+		<property name="userWeight" type="java.lang.Integer">
+			<column name="user_weight" length="11" not-null="false" unique="false" />
+		</property>
+		<property name="userHeight" type="java.lang.Integer">
+			<column name="user_height" length="11" not-null="false" unique="false" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

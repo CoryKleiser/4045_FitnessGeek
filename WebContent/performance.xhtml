@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+</h:head>
+
+<h:body>
+	<ui:composition template="template.xhtml">
+		<ui:define name="title">Fitness Geek</ui:define>
+		
+		
+		<ui:define name="content">
+			<h1>Users</h1>
+			<p:dataTable var="car" value="#{getUsers.users}">
+			    <p:column headerText="User ID">
+			        <h:outputText value="#{user.userId}" />
+			    </p:column>
+			    
+			    <p:column headerText="Username">
+			        <h:outputText value="#{user.userName}" />
+			    </p:column>
+			 
+			    <p:column headerText="First Name">
+			        <h:outputText value="#{user.firstName}" />
+			    </p:column>
+			 
+			    <p:column headerText="Last Name">
+			        <h:outputText value="#{user.lastName}" />
+			    </p:column>
+			 
+			    <p:column headerText="Weight">
+			        <h:outputText value="#{user.userWeight}" />
+			    </p:column>
+			    
+			    <p:column headerText="Height">
+			        <h:outputText value="#{user.userHeightFeet}" />'
+			        <h:outputText value="#{user.userHeightInches}" />"
+			    </p:column>
+			    
+			    <p:column headerText="Email">
+			        <h:outputText value="#{user.email}" />
+			    </p:column>
+			</p:dataTable>
+		</ui:define>
+		<ui:define name="bottom"></ui:define>
+	</ui:composition>
+</h:body>
+
+
+</html>
