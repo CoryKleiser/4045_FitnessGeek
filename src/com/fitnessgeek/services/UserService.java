@@ -29,6 +29,7 @@ public class UserService implements IUserService {
 	public Set<User> showAllUsers(){
 		return getUserDAO().fetchAllUsers();
 	}
+	
 	public IUserDAO getUserDAO() {
 		return userDAO;
 	}
