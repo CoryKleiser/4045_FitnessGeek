@@ -5,6 +5,7 @@ body{
 
 .content{
 	text-align: center;
+	margin-top:60px;
 }
 
 .bottom{
@@ -17,8 +18,21 @@ body{
 
 .btn{
 	margin:.5em;
+	border-radius: 3px;
+}
+
+.facebook {
+	background-color: #3b5998;
+	color: #ffffff;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.google{
+	background-color: #db4437;
+	color: #ffffff;
 }
 
 .loginInput{
 	margin-bottom: 1em;
+	border-radius: 3px;
 }

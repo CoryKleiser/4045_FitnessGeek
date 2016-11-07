@@ -22,15 +22,29 @@
 
 	
 <h:body>
-	<div id="top" class="top">
-	 	
-		<ui:insert name="top">
-		<p:menubar>
-			<p:menuitem value="Home" url="index.xhtml" />
-			<p:menuitem value="Performance" url="performance.xhtml" />
-			<p:menuitem value="Activity Manager" url="activitymanager.xhtml" />
-		</p:menubar>
-		</ui:insert>
+	<div id="top" class="top navbar navbar-fixed-top navbar-default">
+	 	<div class="container">
+		
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.xhtml">FitnessGeek</a>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="mainNav">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="index.xhtml">Home</a></li>
+				<li><a href="performance.xhtml">Performance</a></li>
+				<li><a href="activitymanager.xhtml">Activity Manager</a></li>
+			</ul>
+			<p class="navbar-text navbar-right">Signed in as <a href="signin.xhtml" class="navbar-link">Username goes here</a></p>
+		</div>
+		
+		</div>
 	</div>
 	<div id="content" class="content">
 		 
