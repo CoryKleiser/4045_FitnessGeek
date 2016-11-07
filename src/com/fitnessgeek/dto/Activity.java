@@ -12,26 +12,10 @@ import org.springframework.context.annotation.Scope;
 @Scope("session")
 public class Activity {
 	
-	private String activityTypeName;
-	private int activityTypeId;
+	private String typeName;
+	private int typeId;
 	private Date dateCompleted;
 	private float totalTrackingAmount;
-	private float goalAmount;
-	ActivityHistory activityHistory;
-	
-	public String getActivityTypeName() {
-		return activityTypeName;
-	}
-	public void setActivityTypeName(String activityTypeName) {
-		this.activityTypeName = activityTypeName;
-	}
-	
-	public int getActivityTypeId() {
-		return activityTypeId;
-	}
-	public void setActivityTypeId(int activityTypeId) {
-		this.activityTypeId = activityTypeId;
-	}
 	
 	public Date getDateCompleted() {
 		return dateCompleted;
@@ -46,13 +30,16 @@ public class Activity {
 	public void setTotalTrackingAmount(float totalTrackingAmount) {
 		this.totalTrackingAmount = totalTrackingAmount;
 	}
-	
-	public float getGoalAmount() {
-		return goalAmount;
+	public String getTypeName() {
+		return typeName;
 	}
-	public void setGoalAmount(float goalAmount) {
-		this.goalAmount = goalAmount;
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
 	}
-	
-	
+	public int getTypeId() {
+		return typeId;
+	}
+	public void setTypeId(int typeId) {
+		this.typeId = typeId;
+	}
 }
