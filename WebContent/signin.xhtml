@@ -23,7 +23,10 @@
 			
 			<p:inputText styleClass="loginInput" placeholder="Username" size="25" label="Please Enter Your Username" validatorMessage="Username is incorrect. Please try again." value="#{user.userName}"/><br/>
 			<p:password styleClass="loginInput" placeholder="Password" size="25" label="Please Enter Your Password" validatorMessage="Password is incorrect. Please try again." value="#{user.password}"/><br/>
-			<p:commandButton styleClass="button login" value="Login" action="#{userService.loginUser}"/>
+			<p:commandButton styleClass="btn btn-success login" value="Login" action="#{loginUser.execute}"/>
+			<p:commandButton styleClass="btn register" value="Register" action="#{loginUser.register}"/><br/>
+			<p:commandButton styleClass="btn facebook fa-facebook-f" value="Facebook" action="#{loginUser.facebookLogin}"/><br/>
+			<p:commandButton styleClass="btn button Google" value="Google+" action="#{loginUser.googleLogin}"/><br/>
 		</ui:define>
 		<ui:define name="bottom"></ui:define>
 	</ui:composition>

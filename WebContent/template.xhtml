@@ -10,7 +10,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  	<h:outputStylesheet library="css" name="default.css" />
 	<link rel="stylesheet" href="css/default.css" type="text/css" />
-	<h:outputStylesheet library="css" name="cssLayout.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css"/>
+ 	<h:outputStylesheet library="css" name="cssLayout.css" />
+	<h:outputStylesheet library="css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" name="bootstrap.css"/>
+	<h:outputStylesheet library="css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" name="fontawesome.css"/>
+	<h:outputStylesheet library="js" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" name="bootstrap.js"/>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
 	<title><ui:insert name="title"></ui:insert></title>	
 </h:head>
 <!-- :: Implement Style Sheets -->
@@ -27,18 +32,13 @@
 		</p:menubar>
 		</ui:insert>
 	</div>
-	<div>
-		<div id="content" class="left_content">
-			 
-			<ui:insert name="content">Main Content</ui:insert>
-		</div>
-		<div id="bottom" class="bottom">
-				<ui:insert name="bottom">
-					<p:outputLabel value="Fitness Geek" />
-					<br/>
-				</ui:insert>
-		</div>
-
+	<div id="content" class="content">
+		 
+		<ui:insert name="content">Main Content</ui:insert>
+	</div>
+	<div id="bottom" class="bottom">
+		<h:link styleClass="button footer" action="index.html" value="Home"/>
+		<p>&copy;2016 FitnessGeek</p>
 	</div>
 </h:body>
 </html>
