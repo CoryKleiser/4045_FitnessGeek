@@ -15,18 +15,21 @@
 		<ui:define name="title">Fitness Geek</ui:define>
 		
 		
-		<ui:define name="content">
+		<ui:define name="content" styleClass="container col-lg-12">
 			<h1>Fitness Geek</h1>
 			<h2>
 				<h:outputLabel value="#{applicationIntroInfo.welcome}"/>
 			</h2>
-			
-			<p:inputText styleClass="loginInput" placeholder="Username" size="25" label="Please Enter Your Username" validatorMessage="Username is incorrect. Please try again." value="#{user.userName}"/><br/>
-			<p:password styleClass="loginInput" placeholder="Password" size="25" label="Please Enter Your Password" validatorMessage="Password is incorrect. Please try again." value="#{user.password}"/><br/>
-			<p:commandButton styleClass="btn btn-success login" value="Login" action="#{loginUser.execute}"/>
-			<p:commandButton styleClass="btn btn-info register" value="Register" action="#{loginUser.register}"/><br/>
-			<p:commandButton styleClass="btn facebook fa-facebook-f" value="Facebook" action="#{loginUser.facebookLogin}"/>
-			<p:commandButton styleClass="btn button google" value="Google+" action="#{loginUser.googleLogin}"/><br/>
+			<div class="col-lg-2 col-lg-offset-5">
+				<div class="center">
+					<p:inputText styleClass="loginInput col-lg-12" placeholder="Username" size="25" label="Please Enter Your Username" validatorMessage="Username is incorrect. Please try again." value="#{user.userName}"/>
+					<p:password styleClass="loginInput col-lg-12" placeholder="Password" size="25" label="Please Enter Your Password" validatorMessage="Password is incorrect. Please try again." value="#{user.password}"/>
+					<p:commandButton styleClass="btn btn-success login col-lg-5" value="Login" action="#{loginUser.execute}"/>
+					<p:commandButton styleClass="btn btn-info register col-lg-5 col-lg-offset-1" value="Register" action="#{loginUser.register}"/>
+					<p:commandButton styleClass="btn facebook col-lg-5" value="Facebook" action="#{loginUser.facebookLogin}"/>
+					<p:commandButton styleClass="btn button google col-lg-5 col-lg-offset-1" value="Google+" action="#{loginUser.googleLogin}"/>
+				</div>
+			</div>
 		</ui:define>
 		<ui:define name="bottom"></ui:define>
 	</ui:composition>
