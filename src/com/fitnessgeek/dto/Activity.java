@@ -15,7 +15,7 @@ public class Activity {
 	private String typeName;
 	private int typeId;
 	private Date dateCompleted;
-	private float totalTrackingAmount;
+	private String totalTrackingAmount;
 	
 	public Date getDateCompleted() {
 		return dateCompleted;
@@ -24,10 +24,10 @@ public class Activity {
 		this.dateCompleted = dateCompleted;
 	}
 	
-	public float getTotalTrackingAmount() {
+	public String getTotalTrackingAmount() {
 		return totalTrackingAmount;
 	}
-	public void setTotalTrackingAmount(float totalTrackingAmount) {
+	public void setTotalTrackingAmount(String totalTrackingAmount) {
 		this.totalTrackingAmount = totalTrackingAmount;
 	}
 	public String getTypeName() {
