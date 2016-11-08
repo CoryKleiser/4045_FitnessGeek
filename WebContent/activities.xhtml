@@ -17,15 +17,15 @@
 
 		<ui:define name="content">
 			<h1>Enter Your Activity</h1>
-			<h:form >
+			<h:form styleClass="form-inline">
 				<p:growl id="growl" showDetail="true" sticky="false" />
 
 				<div class="form-group">
 					<b>
-						<p:outputLabel for="activityType" value="Select an Activity: " />
+						<p:outputLabel for="activityType" value="Select an Activity" />
 					</b>
 					
-					<p:selectOneMenu id="activityType" value="#{activity.typeName}">
+					<p:selectOneMenu styleClass="center-block" id="activityType" value="#{activity.typeName}">
 						<f:selectItem itemLabel="Select One" itemValue=""/>
 						<f:selectItem itemLabel="Run" itemValue="run" />
 						<f:selectItem itemLabel="Bike" itemValue="bike" />
@@ -34,23 +34,44 @@
 				</div>
 				
 				<div class="form-group">
-					<p:outputLabel for="activityDate" value="Date: " />
-        			<p:calendar id="activityDate" value="#{activity.dateCompleted}" />
+					<p:outputLabel for="activityDate" value="Date" />
+        			<p:calendar styleClass="center-block" id="activityDate" value="#{activity.dateCompleted}" />
 				</div>
 
 				<div class="form-group">
-					<p:outputLabel for="totalTrackingAmount" value="Amount: " />
-        			<p:inputText id="totalTrackingAmount" value="#{activity.dateCompleted}" />
+					<p:outputLabel styleClass="center-block" for="totalTrackingAmount" value="Amount" />
+        			<p:inputText id="totalTrackingAmount" value="#{activity.totalTrackingAmount}" />
+				</div>
+				
+				<div class="form-group">
+					<p:commandButton styleClass="btn btn-xs btn-success" value="Submit" icon="ui-icon-check" update="growl"
+						actionListener="#{addActivity.execute}" />
 				</div>
 
-
-				<h3>
-					<p:commandButton styleClass="btn btn-success" value="Submit" icon="ui-icon-check" update="growl"
-						actionListener="#{addUser.execute}" />
-				</h3>
 			</h:form>
+
+			<p:dataTable var="activity" value="#{getActivities.activities}">
+				    <p:column headerText="Type ID">
+				        <h:outputText value="#{activity.typeId}" />
+				    </p:column>
+				    
+				    <p:column headerText="TypeName">
+				        <h:outputText value="#{activity.typeName}" />
+				    </p:column>
+				 
+				    <p:column headerText="Length">
+				        <h:outputText value="#{activity.totalTrackingAmount}" />
+				    </p:column>
+				 
+				    <p:column headerText="Date">
+				        <h:outputText value="#{activity.dateCompleted}" />
+				    </p:column>
+				    
+				</p:dataTable>
 		</ui:define>
-		<ui:define name="bottom"></ui:define>
+		<ui:define name="bottom">
+			
+		</ui:define>
 	</ui:composition>
 </h:body>
 
