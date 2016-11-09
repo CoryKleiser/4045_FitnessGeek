@@ -18,4 +18,6 @@ public interface IUserDAO {
 	 */
 	void insert(User user);
 
+	User getSingleUser(String userName);
+
 }
