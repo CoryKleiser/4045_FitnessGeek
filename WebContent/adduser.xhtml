@@ -15,42 +15,54 @@
 		<ui:define name="title">Register</ui:define>
 		
 		
-		<ui:define name="content">
+		<ui:define name="content" styleClass="container">
 			<h1>Register</h1>
-				<h:form>
+				<h:form styleClass="row">
 					<p:growl id="growl" showDetail="true" sticky="false" />
-					
-					<p:outputLabel for="userNameInput" value="Username: "/>
-					<p:inputText id="userNameInput" value="#{user.userName}"/><br/>
-					
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<p:outputLabel for="userNameInput" value="Username: "/><br/>
+						<p:inputText id="userNameInput" value="#{user.userName}"/>
+					</div>
+
 					<!-- TODO:: hide password -->
-					<p:outputLabel for="passwordInput" value="Password: "/>
-					<p:inputText id="passwordInput" value="#{user.password}"/><br/>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+						<p:outputLabel for="passwordInput" value="Password: "/><br/>
+						<p:inputText id="passwordInput" value="#{user.password}"/>
+			    	</div>
 			    	
-			    	<p:outputLabel for="firstNameInput" value="First Name: "/>
-					<p:inputText id="firstNameInput" value="#{user.firstName}"/><br/>
-
-			    	<p:outputLabel for="lastNameInput" value="Last Name: "/>
-					<p:inputText id="lastNameInput" value="#{user.lastName}"/><br/>
+			    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+				    	<p:outputLabel for="firstNameInput" value="First Name: "/><br/>
+						<p:inputText id="firstNameInput" value="#{user.firstName}"/>
+					</div>
 					
-			    	<p:outputLabel for="emailInput" value="Email: "/>
-					<p:inputText id="emailInput" value="#{user.email}"/><br/>
-
-			    	<p:outputLabel for="userWeight" value="Your Weight "/>
-					<p:inputText id="userWeight" value="#{user.userWeight}"/><br/>
-
-			    	<p:outputLabel for="userHeightFeet" value="Your Height "/>
-			    	<h:outputText id="userHeightFeet" value="#{user.userHeightFeet}" style="padding-left: 10px" />'
-			    	<h:outputText id="userHeightInches" value="#{user.userHeightInches}" style="padding-left: 10px" />"
-			        <p:outputPanel>
-			            <p:spinner id="userHeightFeetInput" value="#{user.userHeightFeet}">
-			                <p:ajax update="userHeightFeet" process="@this" />
-			            </p:spinner> feet <br/>
-   			            <p:spinner id="userHeightInchesInput" value="#{user.userHeightInches}">
-			                <p:ajax update="userHeightInches" process="@this" />
-			            </p:spinner> inches <br/>
-	       			</p:outputPanel>
-			    	
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+				    	<p:outputLabel for="lastNameInput" value="Last Name: "/><br/>
+						<p:inputText id="lastNameInput" value="#{user.lastName}"/>
+					</div>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+				    	<p:outputLabel for="emailInput" value="Email: "/><br/>
+						<p:inputText id="emailInput" value="#{user.email}"/>
+					</div>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+				    	<p:outputLabel for="userWeight" value="Your Weight "/><br/>
+						<p:inputText id="userWeight" value="#{user.userWeight}"/>
+					</div>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+				    	<p:outputLabel for="userHeightFeet" value="Your Height "/><br/>
+				    	<h:outputText id="userHeightFeet" value="#{user.userHeightFeet}"/>'
+				    	<h:outputText id="userHeightInches" value="#{user.userHeightInches}"/>"
+				        <p:outputPanel>
+				            <p:spinner id="userHeightFeetInput" value="#{user.userHeightFeet}" styleClass="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+				                <p:ajax update="userHeightFeet" process="@this" />
+				            </p:spinner> feet <br/>
+	   			            <p:spinner id="userHeightInchesInput" value="#{user.userHeightInches}" styleClass="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+				                <p:ajax update="userHeightInches" process="@this" />
+				            </p:spinner> inches <br/>
+		       			</p:outputPanel>
+			    	</div>
 		    	    <p:commandButton value="Submit" icon="ui-icon-check" update="growl" actionListener="#{addUser.execute}"/>
 	    		</h:form>
 		</ui:define>
