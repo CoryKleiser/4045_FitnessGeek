@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</h:head>
+
+<h:body>
+	<ui:composition template="template.xhtml">
+		<ui:define name="title">Fitness Geek</ui:define>
+
+
+		<ui:define name="content">
+			<h1>Gym Pics</h1>
+			<h2>
+				<h:outputLabel value="#{applicationIntroInfo.pictureWelcome}" />
+			</h2>
+			<h:form>
+				<p:remoteCommand name="onload" action="#{pictures.loadPicutres}"
+					autoRun="true" />
+			</h:form>
+			<p:fieldset legend="Add a Gym Pic">
+				<h:form enctype="multipart/form-data">
+					<p:growl id="growl" showDetail="true" sticky="false" />
+
+					<p:outputLabel value="Taken By" />
+					<p:inputText value="#{pictures.photo.contributor}" />
+					<br />
+
+
+					<p:outputLabel value="Date Taken" />
+					<p:calendar id="dateTaken" value="#{pictures.photo.dateTaken}" />
+					<br />
+
+
+					<p:fileUpload value="#{pictures.file}" mode="simple"
+						skinSimple="true" />
+					<br />
+					<p:commandButton value="Upload" ajax="false"
+						actionListener="#{pictures.upload}" />
+				</h:form>
+			</p:fieldset>
+
+			<p:galleria value="#{pictures.photos}" var="image" panelWidth="500"
+				panelHeight="313" showCaption="true">
+				<p:graphicImage name="images/#{image}" alt="#{image}"
+					title="#{image}" />
+			</p:galleria>
+
+		</ui:define>
+		<ui:define name="bottom"></ui:define>
+	</ui:composition>
+</h:body>
+
+
+</html>

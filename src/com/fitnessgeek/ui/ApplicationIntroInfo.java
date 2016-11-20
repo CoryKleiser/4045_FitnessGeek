@@ -18,6 +18,8 @@ public class ApplicationIntroInfo {
 	
 	private String welcome = "Welcome to Fitness Geek.";
 	
+	private String pictureWelcome = "View or Upload Gym Pics";
+	
 	//TODO:: create signin.xhtml and execute method for sign in
 
 	/**
@@ -33,6 +35,12 @@ public class ApplicationIntroInfo {
 	 */
 	public void setWelcome(String welcome) {
 		this.welcome = welcome;
+	}
+	public String getPictureWelcome() {
+		return pictureWelcome;
+	}
+	public void setPictureWelcome(String pictureWelcom) {
+		this.pictureWelcome = pictureWelcom;
 	}
 	
 }

@@ -1,8 +1,11 @@
 package com.fitnessgeek.services;
 
+import java.io.InputStream;
+import java.util.List;
 import java.util.Set;
 
 import com.fitnessgeek.dto.Activity;
+import com.fitnessgeek.dto.Photo;
 import com.fitnessgeek.dto.User;
 
 public interface IUserService {
@@ -22,5 +25,9 @@ public interface IUserService {
 	void add(Activity activity);
 
 	Set<Activity> showAllActivities();
+
+	void savePhoto(Photo photo, InputStream inputstream) throws Exception;
+
+	List<Photo> fetchPhotos();
 
 }
