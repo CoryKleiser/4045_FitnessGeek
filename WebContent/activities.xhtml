@@ -21,56 +21,71 @@
 				<p:growl id="growl" showDetail="true" sticky="false" />
 
 				<div class="form-group">
-					<b>
-						<p:outputLabel for="activityType" value="Select an Activity" />
+					<b> <p:outputLabel for="activityType"
+							value="Select an Activity" />
 					</b>
-					
-					<p:selectOneMenu styleClass="center-block" id="activityType" value="#{activity.typeName}">
-						<f:selectItem itemLabel="Select One" itemValue=""/>
+
+					<p:selectOneMenu styleClass="center-block" id="activityType"
+						value="#{activity.typeName}">
+						<f:selectItem itemLabel="Select One" itemValue="" />
 						<f:selectItem itemLabel="Run" itemValue="run" />
 						<f:selectItem itemLabel="Bike" itemValue="bike" />
 						<f:selectItem itemLabel="Walk" itemValue="walk" />
 					</p:selectOneMenu>
 				</div>
-				
+
 				<div class="form-group">
 					<p:outputLabel for="activityDate" value="Date" />
-        			<p:calendar styleClass="center-block" id="activityDate" value="#{activity.dateCompleted}" />
+					<p:calendar styleClass="center-block" id="activityDate"
+						value="#{activity.dateCompleted}" />
 				</div>
 
 				<div class="form-group">
-					<p:outputLabel styleClass="center-block" for="totalTrackingAmount" value="Amount" />
-        			<p:inputText id="totalTrackingAmount" value="#{activity.totalTrackingAmount}" />
+					<p:outputLabel styleClass="center-block" for="totalTrackingAmount"
+						value="Amount" />
+					<p:inputText id="totalTrackingAmount"
+						value="#{activity.totalTrackingAmount}" />
 				</div>
-				
+
 				<div class="form-group">
-					<p:commandButton styleClass="btn btn-xs btn-success" value="Submit" icon="ui-icon-check" update="growl"
+					<p:commandButton styleClass="btn btn-xs btn-success" value="Submit"
+						icon="ui-icon-check" update="growl"
 						actionListener="#{addActivity.execute}" />
 				</div>
 
 			</h:form>
 
-			<p:dataTable var="activity" value="#{getActivities.activities}">
-				    <p:column headerText="User">
-				        <h:outputText value="#{activity.userId}" />
-				    </p:column>
-				    
-				    <p:column headerText="TypeName">
-				        <h:outputText value="#{activity.typeName}" />
-				    </p:column>
-				 
-				    <p:column headerText="Length">
-				        <h:outputText value="#{activity.totalTrackingAmount}" />
-				    </p:column>
-				 
-				    <p:column headerText="Date">
-				        <h:outputText value="#{activity.completionDate}" />
-				    </p:column>
-				    
-				</p:dataTable>
+			<p:dataTable var="activity" id="table"
+				value="#{getActivities.activities}" selectionMode="single"
+				selection="#{deleteActivity.activity}" rowKey="#{activity.userId}">
+				<p:growl id="growl2" showDetail="true" sticky="false" />
+				
+				<p:ajax event="rowSelect" listener="#{deletActivity.onRowSelect}" update="growl2" />
+				<p:ajax event="rowUnselect"
+					listener="#{deletActivity.onRowUnselect}" />
+				<p:column headerText="User">
+					<h:outputText value="#{activity.userId}" />
+				</p:column>
+
+				<p:column headerText="TypeName">
+					<h:outputText value="#{activity.typeName}" />
+				</p:column>
+
+				<p:column headerText="Length">
+					<h:outputText value="#{activity.totalTrackingAmount}" />
+				</p:column>
+
+				<p:column headerText="Date">
+					<h:outputText value="#{activity.completionDate}" />
+				</p:column>
+			</p:dataTable>
+
+			<p:commandButton update="table" icon="ui-icon-trash" value="Delete"
+				actionListener="#{deleteActivity.execute}" />
+
 		</ui:define>
 		<ui:define name="bottom">
-			
+
 		</ui:define>
 	</ui:composition>
 </h:body>
