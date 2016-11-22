@@ -44,6 +44,9 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 		if(user != null && user.getUserName().length() > 3 && user.getPassword().length() > 4){
 		//:: implement add method from StockListService
 		try{
+			/*
+			 * Get the user height and then convert it to Inches. 
+			 */
 			user.setUserHeight(user.getUserHeightFeet()*12 + user.getUserHeightInches());
 			userService.add(user);
 			logger.info("INFO:: User saved successfully");

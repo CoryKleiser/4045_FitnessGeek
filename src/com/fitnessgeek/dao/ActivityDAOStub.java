@@ -5,8 +5,6 @@ import java.util.Set;
 
 import javax.inject.Named;
 
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
-
 import com.fitnessgeek.dto.Activity;
 
 @Named
@@ -34,6 +32,11 @@ public class ActivityDAOStub implements IActivityDAO {
 		
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.fitnessgeek.dao.IActivityDAO#update(com.fitnessgeek.dto.Activity)
+	 * 
+	 */
 	@Override
 	public void update(Activity activity) {
 		for (Activity activityLoop : activities) {
