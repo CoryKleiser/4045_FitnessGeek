@@ -37,7 +37,6 @@ public class Photo {
 	
 	@Override
 	public String toString() {
-		
 		return uri;
 	}
 }

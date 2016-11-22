@@ -32,6 +32,9 @@ public class UserService implements IUserService {
 
 	@Inject
 	private IPhotoDAO photoDAO;
+	
+	@Inject
+	private JMSBean jmsBean;
 
 	/*
 	 * (non-Javadoc)
@@ -71,14 +74,11 @@ public class UserService implements IUserService {
 		File file = new File(directory, uniqueImageName);
 		fileDAO.save(inputstream, file);
 
-		File thDirectory = new File(
-				"/Users/Willie/DevelopmentMall/JavaWarehouse/Eclipse/EnterpriseAppDev/4045_FitnessGeek/WebContent/resources/thumbnails");
-		File thFile = new File(thDirectory, uniqueImageName);
-
 		photo.setUri(file.toString());
 
 		photo.setUri(uniqueImageName);
 		photoDAO.insert(photo);
+		jmsBean.submit(photo.getUri());
 	}
 
 	@Override

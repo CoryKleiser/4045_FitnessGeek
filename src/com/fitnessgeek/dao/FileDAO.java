@@ -20,5 +20,7 @@ public class FileDAO implements IFileDAO {
 	public void save(InputStream inputstream, File file) throws IOException{
 		OutputStream output = new FileOutputStream(file);
 		IOUtils.copy(inputstream, output);
+		output.flush();
+		output.close();
 	}
 }
