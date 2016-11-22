@@ -9,5 +9,9 @@ public interface IActivityDAO {
 	void insert(Activity activity);
 
 	Set<Activity> fetchAllActivities();
+	
+	void delete(Activity activity);
+	
+	void update(Activity activity);
 
 }

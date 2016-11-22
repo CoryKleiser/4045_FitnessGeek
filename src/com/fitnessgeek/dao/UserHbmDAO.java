@@ -12,45 +12,46 @@ import com.fitnessgeek.dto.User;
 
 /**
  * User hibernate DAO class
+ * 
  * @author moku
  *
  */
 @Named
-public class UserDAO implements IUserDAO{
+public class UserHbmDAO implements IUserDAO {
 
-	
-	public Set<User> users;
-	
-	public UserDAO() {
-		users = new HashSet<User>();
-	}
-	
-	//TODO:: implement Hibernate
 	@Override
-	public Set<User> fetchAllUsers(){
-		return users;
-	}
-	@Override
-	public void insert(User user){
-		//save user to database
+	public Set<User> fetchAllUsers() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		
-		session.save(user);
-		users.add(user);
+		Query query = session.createQuery("from User");
 		
+		@SuppressWarnings("unchecked")
+		Set<User> users = new HashSet<User>(query.list());
+				
+		session.getTransaction().commit();
+		session.close();
+
+		return users;
+	}
+
+	@Override
+	public void insert(User user) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+
+		session.save(user);
+
 		session.getTransaction().commit();
 		session.close();
 	}
-	
+
 	@Override
-	public User getSingleUser(String userName){
+	public User getSingleUser(String userName) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		
-		User user = (User) session
-				.createQuery("FROM User WHERE userName ='"+ userName + "'")
-				.uniqueResult();
-		
+
+		User user = (User) session.createQuery("FROM User WHERE userName ='" + userName + "'").uniqueResult();
+
 		session.close();
 		return user;
 	}

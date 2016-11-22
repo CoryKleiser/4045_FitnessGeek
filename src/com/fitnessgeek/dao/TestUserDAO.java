@@ -16,7 +16,7 @@ import com.fitnessgeek.dto.User;
  */
 public class TestUserDAO {
 
-	private UserDAO userDAO;
+	private UserHbmDAO userDAO;
 
 	private Set<User> users;
 
@@ -85,7 +85,7 @@ public class TestUserDAO {
 	}
 
 	private void givenUserDAOIsMadeWithUsers() {
-		userDAO = new UserDAO();
+		userDAO = new UserHbmDAO();
 
 		User firstUser = new User();
 
