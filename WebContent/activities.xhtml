@@ -51,8 +51,8 @@
 			</h:form>
 
 			<p:dataTable var="activity" value="#{getActivities.activities}">
-				    <p:column headerText="Type ID">
-				        <h:outputText value="#{activity.typeId}" />
+				    <p:column headerText="User">
+				        <h:outputText value="#{activity.userId}" />
 				    </p:column>
 				    
 				    <p:column headerText="TypeName">
@@ -64,7 +64,7 @@
 				    </p:column>
 				 
 				    <p:column headerText="Date">
-				        <h:outputText value="#{activity.dateCompleted}" />
+				        <h:outputText value="#{activity.completionDate}" />
 				    </p:column>
 				    
 				</p:dataTable>

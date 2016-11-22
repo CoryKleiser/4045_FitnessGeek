@@ -1,5 +1,7 @@
 package com.fitnessgeek.services;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import com.fitnessgeek.dto.Activity;
@@ -21,6 +23,8 @@ public interface IUserService {
 
 	void add(Activity activity);
 
-	Set<Activity> showAllActivities();
+	List<Activity> showAllActivities();
+
+	String stringifyDate(Date date);
 
 }

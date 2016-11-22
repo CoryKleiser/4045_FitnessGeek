@@ -13,8 +13,9 @@ import org.springframework.context.annotation.Scope;
 public class Activity {
 	
 	private String typeName;
-	private int typeId;
+	private int userId;
 	private Date dateCompleted;
+	private String completionDate;
 	private String totalTrackingAmount;
 	
 	public Date getDateCompleted() {
@@ -36,10 +37,16 @@ public class Activity {
 	public void setTypeName(String typeName) {
 		this.typeName = typeName;
 	}
-	public int getTypeId() {
-		return typeId;
+	public int getUserId() {
+		return userId;
 	}
-	public void setTypeId(int typeId) {
-		this.typeId = typeId;
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public String getCompletionDate() {
+		return completionDate;
+	}
+	public void setCompletionDate(String completionDate) {
+		this.completionDate = completionDate;
 	}
 }
