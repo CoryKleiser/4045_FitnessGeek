@@ -1,5 +1,9 @@
 package com.fitnessgeek.services;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.inject.Inject;
@@ -40,8 +44,17 @@ public class UserService implements IUserService {
 		getActivityDAO().insert(activity);
 	}
 	@Override
-	public Set<Activity> showAllActivities(){
+	public void delete(Activity activity){
+		getActivityDAO().delete(activity);
+	}
+	@Override
+	public List<Activity> showAllActivities(){
 		return getActivityDAO().fetchAllActivities();
+	}
+	@Override
+	public String stringifyDate(Date date){
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+		return df.format(date);
 	}
 	public IUserDAO getUserDAO() {
 		return userDAO;
