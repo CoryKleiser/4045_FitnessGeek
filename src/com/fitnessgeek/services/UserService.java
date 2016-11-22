@@ -44,6 +44,10 @@ public class UserService implements IUserService {
 		getActivityDAO().insert(activity);
 	}
 	@Override
+	public void delete(Activity activity){
+		getActivityDAO().delete(activity);
+	}
+	@Override
 	public List<Activity> showAllActivities(){
 		return getActivityDAO().fetchAllActivities();
 	}

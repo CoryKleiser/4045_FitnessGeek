@@ -34,6 +34,13 @@ public class ActivityDAO implements IActivityDAO {
 		session.getTransaction().commit();
 		activities.add(activity);
 	}
+	@Override
+	public void delete(Activity activity) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+		session.delete(activity);
+		session.getTransaction().commit();
+	}
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Activity> fetchAllActivities(){

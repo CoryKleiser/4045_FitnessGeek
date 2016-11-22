@@ -20,11 +20,26 @@ public interface IUserService {
 	 * @return set of all users
 	 */
 	Set<User> showAllUsers();
-
+	/**
+	 * add Activity
+	 * @param activity
+	 */
 	void add(Activity activity);
-
+	/**
+	 * retrieve all activities
+	 * @return all activities
+	 */
 	List<Activity> showAllActivities();
-
+	/**
+	 * turn Date into formatted String
+	 * @param date
+	 * @return formatted String
+	 */
 	String stringifyDate(Date date);
+	/**
+	 * delete an activity
+	 * @param activity
+	 */
+	void delete(Activity activity);
 
 }
