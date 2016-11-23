@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Scope;
 
 /**
  * Our Activity class
+ * This contains the approperiate methods to implement Activity
  */
 @Named
 @ManagedBean
