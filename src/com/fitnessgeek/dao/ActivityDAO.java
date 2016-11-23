@@ -12,7 +12,10 @@ import org.hibernate.Session;
 import com.fitnessgeek.dto.Activity;
 
 
-
+/**
+ * Our Activity DAO class 
+ * Contains the methods necessary to implement the ActivityDAO
+ */
 @Named
 public class ActivityDAO implements IActivityDAO {
 
@@ -22,9 +25,13 @@ public class ActivityDAO implements IActivityDAO {
 		activities = new ArrayList<Activity>();
 	}
 	
+	/**
+	 * No return on this method.
+	 * Inserts an activity into our list of activities
+	 * @param avtivity - an aactivity to insert
+	 */ 
 	@Override
 	public void insert(Activity activity) {
-		// TODO Implement Hibernate
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		
@@ -34,6 +41,12 @@ public class ActivityDAO implements IActivityDAO {
 		session.getTransaction().commit();
 		activities.add(activity);
 	}
+	
+	/**
+	 * No return on this method
+	 * Deletes an activity from our activity list
+	 * @param activity - an activity to be deleted
+	 */
 	@Override
 	public void delete(Activity activity) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -41,6 +54,11 @@ public class ActivityDAO implements IActivityDAO {
 		session.delete(activity);
 		session.getTransaction().commit();
 	}
+	
+	/**
+	 * Returns a list of all our activities
+	 * @return a list of activites
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Activity> fetchAllActivities(){
