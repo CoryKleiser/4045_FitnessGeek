@@ -1,6 +1,6 @@
 package com.fitnessgeek.ui;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
@@ -8,7 +8,7 @@ import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
 
-import com.fitnessgeek.dto.User;
+import com.fitnessgeek.dto.Activity;
 import com.fitnessgeek.services.IUserService;
 
 @Named
@@ -19,20 +19,21 @@ import com.fitnessgeek.services.IUserService;
  * @author moku
  *
  */
-public class GetUsers {
+public class GetActivities {
 
 	@Inject
 	private IUserService userService;
-	
-	private Set<User> users;
 
-	public Set<User> getUsers() {
-		users = userService.showAllUsers();
-		return users;
+	private List<Activity> activities;
+
+
+	public List<Activity> getActivities() {
+		activities = userService.showAllActivities();
+		return activities;
 	}
 
-	public void setUsers(Set<User> users) {
-		this.users = users;
+	public void setActivities(List<Activity> activities) {
+		this.activities = activities;
 	}
 	
 }

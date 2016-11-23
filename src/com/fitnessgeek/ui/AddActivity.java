@@ -9,22 +9,21 @@ import javax.inject.Named;
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Scope;
 
+import com.fitnessgeek.dto.Activity;
 import com.fitnessgeek.dto.User;
 import com.fitnessgeek.services.IUserService;
 
-/**
- * Add User UI class
- * @author moku
- *
- */
 @Named
 @ManagedBean
-@Scope("request")
-public class AddUser {
+@Scope("session")
+public class AddActivity {
 final static Logger logger = Logger.getLogger(AddUser.class);
 	
 	@Inject
 	private User user;
+	
+	@Inject
+	private Activity activity;
 	
 	@Inject
 	private IUserService userService;
@@ -35,28 +34,29 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 	 */
 	public String execute(){
 		//TODO:: Form Validation
-		logger.info("INFO:: Entering the add user execute method");
+		//TODO:: associate user with userId
+		logger.info("INFO:: Entering the add activity execute method");
 		String returnMessage;
 		FacesMessage fm;
 		
 		// get faces context
 		FacesContext currentInstance = FacesContext.getCurrentInstance();
-		if(user != null && user.getUserName().length() > 3 && user.getPassword().length() > 4){
-		//:: implement add method from StockListService
+		if(activity != null){
 		try{
-			user.setUserHeight(user.getUserHeightFeet()*12 + user.getUserHeightInches());
-			userService.add(user);
-			logger.info("INFO:: User saved successfully");
+			activity.setCompletionDate(userService.stringifyDate(activity.getDateCompleted()));
+			userService.add(activity);
+			logger.info("INFO:: User Activity saved successfully");
 			returnMessage = "success";
 			// what is the message that we want to show?
-			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Saved", "User Saved");
+			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Saved", "Activity Saved");
 			// display the message
 			currentInstance.addMessage(null, fm);
 		} 
 		catch(Exception e) {
 			returnMessage = "fail";
-			logger.error("ERROR:: User did not save successfully.");
+			logger.error("ERROR:: User Activity did not save successfully.");
 			logger.error(e);
+			e.printStackTrace();
 			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Whoops!", "Something went wrong. Please try again later.");
 			currentInstance.addMessage(null, fm);
 		}
