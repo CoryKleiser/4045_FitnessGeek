@@ -21,15 +21,28 @@ public class UserDAO implements IUserDAO{
 	
 	public Set<User> users;
 	
+	/**
+	 * Default constructor. Sets our users variable to a new HashSet
+	 * No return
+	 */
 	public UserDAO() {
 		users = new HashSet<User>();
 	}
 	
-	//TODO:: implement Hibernate
+	/**
+	 * Fetches all users
+	 * @return users
+	 */
 	@Override
 	public Set<User> fetchAllUsers(){
 		return users;
 	}
+	
+	/**
+	 * Inserts a new user
+	 * @param user
+	 * No return
+	 */
 	@Override
 	public void insert(User user){
 		//save user to database
@@ -43,6 +56,11 @@ public class UserDAO implements IUserDAO{
 		session.close();
 	}
 	
+	/**
+	 * Gets (returns) a single user
+	 * @param String username
+	 * @return user
+	 */
 	@Override
 	public User getSingleUser(String userName){
 		Session session = HibernateUtil.getSessionFactory().openSession();
