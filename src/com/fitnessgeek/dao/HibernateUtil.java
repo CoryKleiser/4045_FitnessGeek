@@ -9,8 +9,10 @@ import org.hibernate.cfg.Configuration;
  * This class contains all of the necessary methods to implement hibernation
  */
 public class HibernateUtil {
+	final static Logger logger = Logger.getLogger(HibernateUtil.class);
 
     private static final SessionFactory sessionFactory = buildSessionFactory();
+    logger.info("INFO: SessionFactory successfully created");
 
     /**
     * Creates the SessionFactory from hibernate.cfg.xml
@@ -25,6 +27,7 @@ public class HibernateUtil {
         }
         catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed
+        	logger.error("ERROR: SessionFactory failed to build", ex);
             System.err.println("Initial SessionFactory creation failed." + ex);
             throw new ExceptionInInitializerError(ex);
         }

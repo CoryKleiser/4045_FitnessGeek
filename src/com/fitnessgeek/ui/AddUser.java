@@ -35,7 +35,7 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 	 */
 	public String execute(){
 		//TODO:: Form Validation
-		logger.info("INFO:: Entering the add user execute method");
+		logger.info("INFO: Entering the add user execute method");
 		String returnMessage;
 		FacesMessage fm;
 		
@@ -46,7 +46,7 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 		try{
 			user.setUserHeight(user.getUserHeightFeet()*12 + user.getUserHeightInches());
 			userService.add(user);
-			logger.info("INFO:: User saved successfully");
+			logger.info("INFO: User saved successfully");
 			returnMessage = "success";
 			// what is the message that we want to show?
 			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Saved", "User Saved");
@@ -55,8 +55,7 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 		} 
 		catch(Exception e) {
 			returnMessage = "fail";
-			logger.error("ERROR:: User did not save successfully.");
-			logger.error(e);
+			logger.error("ERROR: User did not save successfully.", e);
 			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Whoops!", "Something went wrong. Please try again later.");
 			currentInstance.addMessage(null, fm);
 		}

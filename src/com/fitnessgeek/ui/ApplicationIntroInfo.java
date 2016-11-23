@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Scope;
 @ManagedBean
 @Scope("session")
 public class ApplicationIntroInfo {
-
+	final static Logger logger = Logger.getLogger(ApplicationIntroInfo.class);
 	
 	private String welcome = "Welcome to Fitness Geek.";
 	
@@ -25,6 +25,7 @@ public class ApplicationIntroInfo {
 	 * @return welcome
 	 */
 	public String getWelcome() {
+		logger.info("INFO: User started the app");
 		return welcome;
 	}
 	/**

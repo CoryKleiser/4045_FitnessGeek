@@ -17,6 +17,7 @@ import com.fitnessgeek.dto.User;
  */
 @Named
 public class UserDAO implements IUserDAO{
+	final static Logger logger = Logger.getLogger(UserDAO.class);
 
 	
 	public Set<User> users;
@@ -41,6 +42,7 @@ public class UserDAO implements IUserDAO{
 		
 		session.getTransaction().commit();
 		session.close();
+		logger.info("INFO: User saved to database");
 	}
 	
 	@Override

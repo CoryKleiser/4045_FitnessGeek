@@ -11,6 +11,9 @@ import org.hibernate.Session;
 
 import com.fitnessgeek.dto.Activity;
 
+import src.com.fitnessgeek.ui.AddUser;
+import src.com.fitnessgeek.ui.Logger;
+
 
 /**
  * Our Activity DAO class 
@@ -18,6 +21,7 @@ import com.fitnessgeek.dto.Activity;
  */
 @Named
 public class ActivityDAO implements IActivityDAO {
+	final static Logger logger = Logger.getLogger(ActivityDAO.class);
 
 	public List<Activity> activities;
 	
@@ -40,6 +44,7 @@ public class ActivityDAO implements IActivityDAO {
 		
 		session.getTransaction().commit();
 		activities.add(activity);
+		logger.info("INFO: Activity inserted into list");
 	}
 	
 	/**
@@ -49,6 +54,7 @@ public class ActivityDAO implements IActivityDAO {
 	 */
 	@Override
 	public void delete(Activity activity) {
+		logger.info("INFO: Activity deleted from list");
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		session.delete(activity);

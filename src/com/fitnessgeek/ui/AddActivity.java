@@ -17,7 +17,7 @@ import com.fitnessgeek.services.IUserService;
 @ManagedBean
 @Scope("session")
 public class AddActivity {
-final static Logger logger = Logger.getLogger(AddUser.class);
+final static Logger logger = Logger.getLogger(AddActivity.class);
 	
 	@Inject
 	private User user;
@@ -35,7 +35,7 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 	public String execute(){
 		//TODO:: Form Validation
 		//TODO:: associate user with userId
-		logger.info("INFO:: Entering the add activity execute method");
+		logger.info("INFO: Entering the add activity execute method");
 		String returnMessage;
 		FacesMessage fm;
 		
@@ -45,7 +45,7 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 		try{
 			activity.setCompletionDate(userService.stringifyDate(activity.getDateCompleted()));
 			userService.add(activity);
-			logger.info("INFO:: User Activity saved successfully");
+			logger.info("INFO: User Activity saved successfully");
 			returnMessage = "success";
 			// what is the message that we want to show?
 			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Saved", "Activity Saved");
@@ -54,8 +54,7 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 		} 
 		catch(Exception e) {
 			returnMessage = "fail";
-			logger.error("ERROR:: User Activity did not save successfully.");
-			logger.error(e);
+			logger.error("ERROR: User Activity did not save successfully.", e);			
 			e.printStackTrace();
 			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Whoops!", "Something went wrong. Please try again later.");
 			currentInstance.addMessage(null, fm);

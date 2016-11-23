@@ -22,7 +22,7 @@ import com.fitnessgeek.services.IUserService;
 @ManagedBean
 @Scope("request")
 public class DeleteActivity {
-	final static Logger logger = Logger.getLogger(AddUser.class);
+	final static Logger logger = Logger.getLogger(DeleteActivity.class);
 	@Inject
 	private IUserService userService;
 	
@@ -30,7 +30,7 @@ public class DeleteActivity {
 	
 	public String execute(){
 		//TODO:: Form Validation
-		logger.info("INFO:: Entering the delete activity execute method");
+		logger.info("INFO: Entering the delete activity execute method");
 		String returnMessage;
 		FacesMessage fm;
 				
@@ -40,7 +40,7 @@ public class DeleteActivity {
 		//:: implement add method from StockListService
 		try{
 			userService.delete(activity);
-			logger.info("INFO:: Activity deleted.");
+			logger.info("INFO: Activity deleted.");
 			returnMessage = "success";
 			// what is the message that we want to show?
 			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Activity Deleted");
@@ -49,8 +49,7 @@ public class DeleteActivity {
 		} 
 		catch(Exception e) {
 			returnMessage = "fail";
-			logger.error("ERROR:: Activity was not Deleted.");
-			logger.error(e);
+			logger.error("ERROR: Activity was not Deleted.", e);
 			e.printStackTrace();
 			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Whoops!", "Activity was not deleted.");
 			currentInstance.addMessage(null, fm);
