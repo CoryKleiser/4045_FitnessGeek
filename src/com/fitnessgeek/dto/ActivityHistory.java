@@ -7,6 +7,10 @@ import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
 
+/**
+ * Our ActivityHistory class
+ * This contains the approperiate methods to implement Activity History
+ */
 @Named
 @ManagedBean
 @Scope("session")
