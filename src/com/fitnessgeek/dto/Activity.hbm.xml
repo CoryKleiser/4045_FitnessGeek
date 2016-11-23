@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.fitnessgeek.dto.Activity" table="activity"
+		catalog="fitness_geek">
+		<id name="userId" type="java.lang.Integer">
+			<column name="user_id" />
+		</id>
+		<property name="typeName" type="string">
+			<column name="type_name" length="40" not-null="true" unique="false" />
+		</property>
+		<property name="totalTrackingAmount" type="string">
+			<column name="tracking_amount" length="40" not-null="true"
+				unique="false" />
+		</property>
+		<property name="completionDate" type="string">
+			<column name="date_completed" length="255" not-null="true"
+				unique="false" />
+		</property>
+
+	</class>
+</hibernate-mapping>
