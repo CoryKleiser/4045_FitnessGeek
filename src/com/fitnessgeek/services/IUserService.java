@@ -24,10 +24,16 @@ public interface IUserService {
 
 	void add(Activity activity);
 
-	Set<Activity> showAllActivities();
+	List<Activity> showAllActivities();
 
 	void savePhoto(Photo photo, InputStream inputstream) throws Exception;
 
 	List<Photo> fetchPhotos();
+
+	void update(Activity activity);
+
+	void delete(Activity activity);
+
+
 
 }

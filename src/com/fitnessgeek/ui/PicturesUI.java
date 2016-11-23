@@ -18,7 +18,7 @@ import com.fitnessgeek.services.IUserService;
 @Named
 @ManagedBean
 @Scope("session")
-public class Pictures {
+public class PicturesUI {
 	
 	@Inject
 	private Photo photo;

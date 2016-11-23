@@ -80,4 +80,8 @@ public class User {
 	public void setUserHeight(int userHeight) {
 		this.userHeight = userHeight;
 	}
+	@Override
+	public String toString() {
+		return userName;
+	}
 }

@@ -60,9 +60,20 @@ public class UserService implements IUserService {
 	public void add(Activity activity) {
 		getActivityDAO().insert(activity);
 	}
+	
+	@Override
+	public void update(Activity activity){
+		getActivityDAO().update(activity);
+	}
+	
+	@Override
+	public void delete(Activity activity){
+		getActivityDAO().delete(activity);
+	}
+	
 
 	@Override
-	public Set<Activity> showAllActivities() {
+	public List<Activity> showAllActivities() {
 		return getActivityDAO().fetchAllActivities();
 	}
 
@@ -84,6 +95,10 @@ public class UserService implements IUserService {
 	@Override
 	public List<Photo> fetchPhotos() {
 		return photoDAO.fetchPhotos();
+	}
+	
+	public List<User> getFilteredUsers(String query){
+		return userDAO.getFilteredUsers(query);
 	}
 
 	private String getUniqueImageName() {

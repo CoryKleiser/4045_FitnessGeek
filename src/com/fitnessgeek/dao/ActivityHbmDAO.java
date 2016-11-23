@@ -1,6 +1,7 @@
 package com.fitnessgeek.dao;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.inject.Named;
@@ -37,14 +38,14 @@ public class ActivityHbmDAO implements IActivityDAO  {
 	 * fetch all the users activities from the DB and return them as a set of activities. 
 	 */
 	@Override
-	public Set<Activity> fetchAllActivities() {
+	public List<Activity> fetchAllActivities() {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		Query query = session.createQuery("from Activity");
 		
 		@SuppressWarnings("unchecked")
-		Set<Activity> activitySet = new HashSet<Activity>(query.list());
+		List<Activity> activitySet = query.list();
 		
 		session.getTransaction().commit();
 		session.close();

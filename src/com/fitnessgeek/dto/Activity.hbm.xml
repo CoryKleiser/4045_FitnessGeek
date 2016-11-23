@@ -8,13 +8,13 @@
 			<column name="ID" />
 		</id>
 		<property name="dateCompleted" type="string">
-			<column name="DATE_COMPLETED" length="60" not-null="true" unique="true" />
+			<column name="DATE_COMPLETED" length="60" not-null="false" unique="true" />
 		</property>
 		<property name="totalTrackingAmount" type="java.lang.Integer">
 			<column name="TRACKING_AMOUNT"/>
 		</property>
 		<property name="typeName" type="string">
-			<column name="TYPE_NAME" length="60" not-null="true" unique="false" />
+			<column name="TYPE_NAME" length="60" not-null="false" unique="false" />
 		</property>
 	</class>
 </hibernate-mapping>

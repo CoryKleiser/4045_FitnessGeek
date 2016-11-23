@@ -1,6 +1,7 @@
 package com.fitnessgeek.dao;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.inject.Named;
@@ -69,6 +70,17 @@ public class UserHbmDAO implements IUserDAO {
 
 		session.close();
 		return user;
+	}
+	
+	@Override
+	public List<User> getFilteredUsers(String query) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+
+		@SuppressWarnings("unchecked")
+		List<User> users = session.createQuery("FROM User WHERE userName like '%" + query + "%'").list();
+
+		session.close();
+		return users;
 	}
 
 }

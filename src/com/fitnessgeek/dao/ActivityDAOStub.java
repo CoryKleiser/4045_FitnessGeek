@@ -1,7 +1,7 @@
 package com.fitnessgeek.dao;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Named;
 
@@ -10,10 +10,10 @@ import com.fitnessgeek.dto.Activity;
 @Named
 public class ActivityDAOStub implements IActivityDAO {
 
-	public Set<Activity> activities;
+	public List<Activity> activities;
 	
 	public ActivityDAOStub() {
-		activities = new HashSet<Activity>();
+		activities = new ArrayList<Activity>();
 	}
 	
 	@Override
@@ -22,7 +22,7 @@ public class ActivityDAOStub implements IActivityDAO {
 		activities.add(activity);
 	}
 	@Override
-	public Set<Activity> fetchAllActivities(){
+	public List<Activity> fetchAllActivities(){
 		return activities;
 	}
 

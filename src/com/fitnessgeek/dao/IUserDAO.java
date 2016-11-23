@@ -1,5 +1,6 @@
 package com.fitnessgeek.dao;
 
+import java.util.List;
 import java.util.Set;
 
 import com.fitnessgeek.dto.User;
@@ -23,5 +24,7 @@ public interface IUserDAO {
 	 * @return
 	 */
 	User getSingleUser(String userName);
+
+	List<User> getFilteredUsers(String query);
 
 }

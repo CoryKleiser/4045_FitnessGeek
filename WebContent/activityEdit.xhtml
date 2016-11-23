@@ -16,14 +16,20 @@
 
 
 		<ui:define name="content">
-			<h1>Enter Your Activity</h1>
+			<h1>Edit Your Activity</h1>
 
 			<h:form styleClass="form-inline">
 				<p:growl id="growl" showDetail="true" sticky="false" />
 				<div class="form-group">
+					<p:outputLabel value="ID: #{activityUIEditDelete.activity.id}" />
+
+				</div>
+				<div class="form-group">
 					<b> <p:outputLabel for="activityType"
 							value="Select an Activity" />
 					</b>
+
+
 
 					<p:selectOneMenu styleClass="center-block" id="activityType"
 						value="#{activity.typeName}">
@@ -37,49 +43,28 @@
 				<div class="form-group">
 					<p:outputLabel for="activityDate" value="Date" />
 					<p:calendar styleClass="center-block" id="activityDate"
-						value="#{activity.formatedDateCompleted}" />
+						value="#{activityUIEditDelete.activity.formatedDateCompleted}" />
 				</div>
 
 				<div class="form-group">
 					<p:outputLabel styleClass="center-block" for="totalTrackingAmount"
 						value="Amount" />
 					<p:inputText id="totalTrackingAmount"
-						value="#{activity.totalTrackingAmount}" />
+						value="#{activityUIEditDelete.activity.totalTrackingAmount}" />
 				</div>
 
 				<div class="form-group">
-					<p:commandButton styleClass="btn btn-xs btn-success" value="Submit"
-						icon="ui-icon-check" update="growl"
-						actionListener="#{activityUI.executeAdd}" />
+					<p:commandButton styleClass="btn btn-xs btn-success" value="Edit"
+						icon="ui-icon-check" 
+						actionListener="#{activityUIEditDelete.executeEdit}" update="growl" />
 				</div>
+
+				<div class="form-group">
+					<p:commandButton styleClass="btn btn-xs btn-danger" value="Delete"
+						actionListener="#{activityUIEditDelete.executeDelete}" update="growl"/>
+				</div>
+
 			</h:form>
-
-
-			<p:dataTable var="activityResult" id="table"
-				value="#{activityUI.activities}" selectionMode="single"
-				rowKey="#{activityResult.id}">
-				<p:growl id="growl2" showDetail="true" sticky="false" />
-
-				<p:ajax event="rowSelect" listener="#{activityUI.onRowSelect}" />
-
-				<p:ajax event="rowUnselect"
-					listener="#{deletActivity.onRowUnselect}" />
-				<p:column headerText="Id">
-					<h:outputText value="#{activityResult.id}" />
-				</p:column>
-
-				<p:column headerText="TypeName">
-					<h:outputText value="#{activityResult.typeName}" />
-				</p:column>
-
-				<p:column headerText="Length">
-					<h:outputText value="#{activityResult.totalTrackingAmount}" />
-				</p:column>
-
-				<p:column headerText="Date">
-					<h:outputText value="#{activityResult.dateCompleted}" />
-				</p:column>
-			</p:dataTable>
 
 		</ui:define>
 		<ui:define name="bottom">
