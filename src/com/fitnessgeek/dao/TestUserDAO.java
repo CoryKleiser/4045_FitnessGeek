@@ -25,6 +25,9 @@ public class TestUserDAO {
 
 	private User singleUser;
 
+	/**
+	 * This test method runs all of our tests
+	 */
 	@Test
 	public void runUnitTest() {
 		givenUserDAOIsMadeWithUsers();
@@ -32,11 +35,17 @@ public class TestUserDAO {
 		fetchSingleUserByUserId();
 		verifyResults();
 	}
-
+	
+	/**
+	 * This test method fetches a user by their id
+	 */ 
 	private void fetchSingleUserByUserId() {
 		singleUser = userDAO.getSingleUser(oneUserNameUid);
 	}
 
+	/**
+	 * This test method verifies our results
+	 */
 	private void verifyResults() {
 		Boolean userOneFound = false;
 		Boolean userTwoFound = false;
@@ -79,11 +88,17 @@ public class TestUserDAO {
 
 	}
 
+	/**
+	 * This test method fetches all users
+	 */
 	private void fetchAllUsers() {
 		users = userDAO.fetchAllUsers();
 
 	}
 
+	/**
+	 * This test method tests user creation with our DAO
+	 */
 	private void givenUserDAOIsMadeWithUsers() {
 		userDAO = new UserDAO();
 
