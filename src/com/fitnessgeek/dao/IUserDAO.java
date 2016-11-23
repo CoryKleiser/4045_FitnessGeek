@@ -4,6 +4,9 @@ import java.util.Set;
 
 import com.fitnessgeek.dto.User;
 
+/**
+ * Interface for our UserDAO
+ */
 public interface IUserDAO {
 
 	/**
@@ -20,7 +23,7 @@ public interface IUserDAO {
 
 	/**
 	 * @param userName
-	 * @return
+	 * @return user
 	 */
 	User getSingleUser(String userName);
 
