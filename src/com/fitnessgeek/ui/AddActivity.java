@@ -35,7 +35,7 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 	public String execute(){
 		//TODO:: Form Validation
 		//TODO:: associate user with userId
-		logger.info("INFO:: Entering the add activity execute method");
+		logger.info("Entering the add activity execute method"); //INFO:: is unncessary, the logger will already state what kind of log
 		String returnMessage;
 		FacesMessage fm;
 		
@@ -44,7 +44,7 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 		if(activity != null){
 		try{
 			userService.add(activity);
-			logger.info("INFO:: User saved successfully");
+			logger.info("User saved successfully"); //INFO:: is unncessary, the logger will already state what kind of log
 			returnMessage = "success";
 			// what is the message that we want to show?
 			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Saved", "Activity Saved");
@@ -53,7 +53,7 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 		} 
 		catch(Exception e) {
 			returnMessage = "fail";
-			logger.error("ERROR:: User did not save successfully.");
+			logger.error("User did not save successfully."); //ERROR:: is unncessary, the logger will already state what kind of log
 			logger.error(e);
 			fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Whoops!", "Something went wrong. Please try again later.");
 			currentInstance.addMessage(null, fm);

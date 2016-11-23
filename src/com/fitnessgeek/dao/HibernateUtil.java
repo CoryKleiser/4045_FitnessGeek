@@ -14,7 +14,8 @@ public class HibernateUtil {
         }
         catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed
-            System.err.println("Initial SessionFactory creation failed." + ex);
+            //A logger is used in two of the ui classes, this is the only other case of logging and it uses System.err.prntln.
+        	//Consider expanding the logger
             throw new ExceptionInInitializerError(ex);
         }
     }
