@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.fitnessgeek.dto.Activity;
 
+/**
+ * The interface for our Activity/dao
+ */
 public interface IActivityDAO {
 	/**
 	 * insert activity into database
