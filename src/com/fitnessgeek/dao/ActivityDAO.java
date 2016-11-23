@@ -28,7 +28,7 @@ public class ActivityDAO implements IActivityDAO {
 	/**
 	 * No return on this method.
 	 * Inserts an activity into our list of activities
-	 * @param avtivity - an aactivity to insert
+	 * @param avtivity 
 	 */ 
 	@Override
 	public void insert(Activity activity) {
@@ -45,7 +45,7 @@ public class ActivityDAO implements IActivityDAO {
 	/**
 	 * No return on this method
 	 * Deletes an activity from our activity list
-	 * @param activity - an activity to be deleted
+	 * @param activity 
 	 */
 	@Override
 	public void delete(Activity activity) {
