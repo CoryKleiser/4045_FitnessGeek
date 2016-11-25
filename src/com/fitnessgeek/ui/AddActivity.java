@@ -65,14 +65,22 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 			currentInstance.addMessage(null, fm);
 			returnMessage = "nullentry";
 		}
-		//TODO:: navigate to home page on success/handle errors on fail
+		
 		return returnMessage;
 	}
 
+	/**
+	 * Gets the user
+	 * @return User
+	 */
 	public User getUser() {
 		return user;
 	}
-
+	
+	/**
+	 * Takes in a User and sets the current User to that value
+	 * @param User user
+	 */
 	public void setUser(User user) {
 		this.user = user;
 	}
