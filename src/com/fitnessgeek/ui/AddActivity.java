@@ -33,8 +33,7 @@ final static Logger logger = Logger.getLogger(AddUser.class);
 	 * @return return message success/fail
 	 */
 	public String execute(){
-		//TODO:: Form Validation
-		//TODO:: associate user with userId
+		
 		logger.info("INFO:: Entering the add activity execute method");
 		String returnMessage;
 		FacesMessage fm;
