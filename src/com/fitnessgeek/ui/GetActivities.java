@@ -26,7 +26,6 @@ public class GetActivities {
 
 	private List<Activity> activities;
 
-
 	/**
 	 * This method returns a List of all our Activities
 	 * @return List<Activity>
