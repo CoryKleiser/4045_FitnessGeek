@@ -36,6 +36,7 @@ public class loginUser {
 	 * @return String
 	 */
 	public String execute(String username, String password) {
+		//TODO: Implement Method
 		return "success";
 	}
 	
@@ -44,6 +45,7 @@ public class loginUser {
 	 * @return String
 	 */
 	public String register() {
+		//TODO: Implement Method
 		return "success";
 	}
 	
@@ -52,6 +54,7 @@ public class loginUser {
 	 * @return String
 	 */
 	public String facebookLogin() {
+		//TODO: Implement Method
 		return "success";
 	}
 	
@@ -60,6 +63,7 @@ public class loginUser {
 	 * @return String
 	 */
 	public String googleLogin() {
+		//TODO: Implement Method
 		return "success";
 	}
 	
