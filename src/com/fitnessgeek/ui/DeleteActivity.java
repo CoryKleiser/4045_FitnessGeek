@@ -28,8 +28,12 @@ public class DeleteActivity {
 	
 	private Activity activity;
 	
+	/**
+	 * 
+	 * @return String
+	 */
 	public String execute(){
-		//TODO:: Form Validation
+		
 		logger.info("INFO:: Entering the delete activity execute method");
 		String returnMessage;
 		FacesMessage fm;
@@ -60,19 +64,33 @@ public class DeleteActivity {
 			currentInstance.addMessage(null, fm);
 			returnMessage = "nullentry";
 		}
-		//TODO:: navigate to home page on success/handle errors on fail
+		
 		return returnMessage;
 	}
+	
+	/**
+	 * 
+	 * 
+	 */
 	public void onRowSelect(SelectEvent event) {
         FacesMessage msg = new FacesMessage("Activity Selected", ((Activity) event.getObject()).toString());
         FacesContext.getCurrentInstance().addMessage(null, msg);
         
         activity = ((Activity) event.getObject());
     }
+    
+    	/**
+    	 * Gets the Activity
+    	 * @return Activity
+    	 */
 	public Activity getActivity() {
 		return activity;
 	}
-
+	
+	/**
+    	 * Takes in an Activity and sets the current Activity to that value
+    	 * @param Activity activity
+    	 */
 	public void setActivity(Activity activity) {
 		this.activity = activity;
 	}
