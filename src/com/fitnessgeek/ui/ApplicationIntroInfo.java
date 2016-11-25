@@ -17,8 +17,6 @@ public class ApplicationIntroInfo {
 
 	
 	private String welcome = "Welcome to Fitness Geek.";
-	
-	//TODO:: create signin.xhtml and execute method for sign in
 
 	/**
 	 * get welcome slogan for home page of Fitness Geek
