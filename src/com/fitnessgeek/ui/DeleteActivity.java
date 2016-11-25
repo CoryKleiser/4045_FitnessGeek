@@ -29,8 +29,8 @@ public class DeleteActivity {
 	private Activity activity;
 	
 	/**
-	 * 
-	 * @return String
+	 * handle user registration submission 
+	 * @return return message success/fail
 	 */
 	public String execute(){
 		
