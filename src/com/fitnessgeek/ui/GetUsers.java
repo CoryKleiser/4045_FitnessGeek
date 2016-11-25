@@ -26,11 +26,19 @@ public class GetUsers {
 	
 	private Set<User> users;
 
+	/**
+	 * This method returns a list of all our users
+	 * @return Set<User>
+	 */
 	public Set<User> getUsers() {
 		users = userService.showAllUsers();
 		return users;
 	}
 
+	/**
+	 * This method takes in a List of Users and sets our User List equal to that value
+	 * @param Set<User> users
+	 */
 	public void setUsers(Set<User> users) {
 		this.users = users;
 	}
