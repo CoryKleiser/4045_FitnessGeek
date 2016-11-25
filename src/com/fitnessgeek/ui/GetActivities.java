@@ -14,10 +14,10 @@ import com.fitnessgeek.services.IUserService;
 @Named
 @ManagedBean
 @Scope("session")
+
 /**
  * test class for time being
  * @author moku
- *
  */
 public class GetActivities {
 
@@ -27,11 +27,19 @@ public class GetActivities {
 	private List<Activity> activities;
 
 
+	/**
+	 * This method returns a List of all our Activities
+	 * @return List<Activity>
+	 */
 	public List<Activity> getActivities() {
 		activities = userService.showAllActivities();
 		return activities;
 	}
 
+	/**
+	 * This method takes in a List of Activities and sets our Activity List equal to that value
+	 * @param List<Activity> activities
+	 */
 	public void setActivities(List<Activity> activities) {
 		this.activities = activities;
 	}
