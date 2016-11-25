@@ -26,6 +26,10 @@ public class TestUserService {
 	
 	private Set<User> users;
 	
+	
+	/**
+	 * This method runs our unit test
+	 */
 	@Test
 	public void runUnitTest(){
 		givenUserServiceIsPopulatedWithADAO();
@@ -34,18 +38,27 @@ public class TestUserService {
 	}
 
 
-
+	/**
+	 * This method gets a user.
+	 * It is a helper method and is used in our Unit Test
+	 */
 	private void getUser() {
 		users = userService.showAllUsers();
 	}
 
 
-
+	/**
+	 * This method is called in our unit tests, after our helper methods.
+	 * It verifies that a user was successfully created and added to our list.
+	 */
 	private void verifyResults() {
 		Assert.assertEquals(1, users.size());
 	}
 
-
+	/**
+	 * This method populates our DAO given a user
+	 * It is a helper method and is used in our Unit Test
+	 */
 	private void givenUserServiceIsPopulatedWithADAO() {
 		userService = new UserService();
 		
@@ -63,6 +76,10 @@ public class TestUserService {
 		
 	}
 	
+	/**
+	 * This method creates a new user and List of Users, and adds a user to the list.
+	 * It is a helper method and is used in our Unit Test
+	 */
 	private Set<User> constructUserList(){
 		
 		Set<User> users = new HashSet<User>();
