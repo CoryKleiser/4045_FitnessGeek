@@ -10,9 +10,13 @@ import javax.jms.TextMessage;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+/**
+ * This is used with the photo class It will upload the photo location to a
+ * queue
+ */
 @Named
 public class JMSBean {
-	
+
 	@Inject
 	ActiveMQConnectionFactory jmsConnectionFactory;
 

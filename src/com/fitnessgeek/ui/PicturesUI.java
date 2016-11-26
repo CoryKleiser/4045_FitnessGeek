@@ -15,23 +15,28 @@ import org.springframework.context.annotation.Scope;
 
 import com.fitnessgeek.dto.Photo;
 import com.fitnessgeek.services.IUserService;
+
+/**
+ * This class handles the picture ui interaction
+ */
 @Named
 @ManagedBean
 @Scope("session")
 public class PicturesUI {
-	
+
 	@Inject
 	private Photo photo;
-	
+
 	@Inject
 	private IUserService userService;
-	
-	
+
 	private UploadedFile file;
-	
+
 	private List<Photo> photos;
-	
-	
+
+	/**
+	 * Upload a photo
+	 */
 	public void upload() {
 		if (getFile() != null) {
 			try {
@@ -51,11 +56,13 @@ public class PicturesUI {
 				FacesContext.getCurrentInstance().addMessage(null, message);
 			}
 		}
-		
-		
+
 	}
 
-	public void loadPicutres(){
+	/**
+	 * Load all photos
+	 */
+	public void loadPicutres() {
 		setPhotos(userService.fetchPhotos());
 	}
 
@@ -63,16 +70,13 @@ public class PicturesUI {
 		return photo;
 	}
 
-
 	public void setPhoto(Photo photo) {
 		this.photo = photo;
 	}
 
-
 	public List<Photo> getPhotos() {
 		return photos;
 	}
-
 
 	public void setPhotos(List<Photo> photos) {
 		this.photos = photos;

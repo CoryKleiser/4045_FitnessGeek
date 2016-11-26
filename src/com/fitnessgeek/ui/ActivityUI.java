@@ -26,7 +26,7 @@ public class ActivityUI {
 
 	@Inject
 	private IUserService userService;
-	
+
 	@Inject
 	ActivityUIEditDelete activityUIEditDelete;
 
@@ -34,6 +34,11 @@ public class ActivityUI {
 
 	final static Logger logger = Logger.getLogger(ActivityUI.class);
 
+	/**
+	 * handle adding activity
+	 * 
+	 * @return return message success/fail
+	 */
 	public String executeAdd() {
 		// TODO:: Form Validation
 		// TODO:: associate user with userId
@@ -66,17 +71,20 @@ public class ActivityUI {
 			currentInstance.addMessage(null, fm);
 			returnMessage = "nullentry";
 		}
-
-		// TODO:: navigate to home page on success/handle errors on fail
 		return returnMessage;
 	}
 
+	/**
+	 * On row select, got to edit screen
+	 * 
+	 * @return return message success/fail
+	 */
 	public void onRowSelect(SelectEvent event) {
 
 		Activity activitySelected = ((Activity) event.getObject());
-		
+
 		activityUIEditDelete.setActivity(activitySelected);
-		
+
 		try {
 			FacesContext.getCurrentInstance().getExternalContext().redirect("activityEdit.xhtml");
 		} catch (IOException e) {

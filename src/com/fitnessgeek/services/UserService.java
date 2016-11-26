@@ -32,7 +32,7 @@ public class UserService implements IUserService {
 
 	@Inject
 	private IPhotoDAO photoDAO;
-	
+
 	@Inject
 	private JMSBean jmsBean;
 
@@ -56,27 +56,51 @@ public class UserService implements IUserService {
 		return getUserDAO().fetchAllUsers();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.fitnessgeek.services.IUserService#showAllUsers()
+	 */
 	@Override
 	public void add(Activity activity) {
 		getActivityDAO().insert(activity);
 	}
-	
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.fitnessgeek.services.IUserService#showAllUsers()
+	 */
 	@Override
-	public void update(Activity activity){
+	public void update(Activity activity) {
 		getActivityDAO().update(activity);
 	}
-	
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.fitnessgeek.services.IUserService#showAllUsers()
+	 */
 	@Override
-	public void delete(Activity activity){
+	public void delete(Activity activity) {
 		getActivityDAO().delete(activity);
 	}
-	
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.fitnessgeek.services.IUserService#showAllUsers()
+	 */
 	@Override
 	public List<Activity> showAllActivities() {
 		return getActivityDAO().fetchAllActivities();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.fitnessgeek.services.IUserService#showAllUsers()
+	 */
 	@Override
 	public void savePhoto(Photo photo, InputStream inputstream) throws Exception {
 		File directory = new File(
@@ -92,15 +116,29 @@ public class UserService implements IUserService {
 		jmsBean.submit(photo.getUri());
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.fitnessgeek.services.IUserService#showAllUsers()
+	 */
 	@Override
 	public List<Photo> fetchPhotos() {
 		return photoDAO.fetchPhotos();
 	}
-	
-	public List<User> getFilteredUsers(String query){
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.fitnessgeek.services.IUserService#showAllUsers()
+	 */
+	@Override
+	public List<User> getFilteredUsers(String query) {
 		return userDAO.getFilteredUsers(query);
 	}
 
+	/*
+	 * Generate a unique image name
+	 */
 	private String getUniqueImageName() {
 		String imagePrefix = "fitnessGeek";
 		String imageSuffix = ".jpg";

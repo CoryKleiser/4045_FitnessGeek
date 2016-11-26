@@ -21,6 +21,7 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import com.fitnessgeek.dto.User;
 import com.fitnessgeek.services.IUserService;
 
+@SuppressWarnings("serial")
 public class UserJSONServlet extends HttpServlet {
 
 	@Inject

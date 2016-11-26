@@ -12,22 +12,26 @@ import com.fitnessgeek.dto.Photo;
 @Named
 public class PhotoDAO implements IPhotoDAO {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.fitnessgeek.dao.IPhotoDAO#insert(com.fitnessgeek.dto.Photo)
 	 */
 	@Override
-	public void insert(Photo photo){
-		//save user to database
+	public void insert(Photo photo) {
+		// save user to database
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
-		
+
 		session.save(photo);
-		
+
 		session.getTransaction().commit();
 		session.close();
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.fitnessgeek.dao.IPhotoDAO#fetchPhotos()
 	 */
 	@Override

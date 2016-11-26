@@ -22,29 +22,31 @@ public class UserHbmDAO implements IUserDAO {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.fitnessgeek.dao.IUserDAO#fetchAllUsers()
-	 * Fetch all the users from the DB as a set of User objects. 
+	 * 
+	 * @see com.fitnessgeek.dao.IUserDAO#fetchAllUsers() Fetch all the users
+	 * from the DB as a set of User objects.
 	 */
 	@Override
 	public Set<User> fetchAllUsers() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
-		
+
 		Query query = session.createQuery("from User");
-		
+
 		@SuppressWarnings("unchecked")
 		Set<User> users = new HashSet<User>(query.list());
-				
+
 		session.getTransaction().commit();
 		session.close();
 
 		return users;
 	}
-	
+
 	/*
 	 * (non-Javadoc)
-	 * @see com.fitnessgeek.dao.IUserDAO#insert(com.fitnessgeek.dto.User)
-	 * Add a new User to the DB.
+	 * 
+	 * @see com.fitnessgeek.dao.IUserDAO#insert(com.fitnessgeek.dto.User) Add a
+	 * new User to the DB.
 	 */
 	@Override
 	public void insert(User user) {
@@ -59,8 +61,9 @@ public class UserHbmDAO implements IUserDAO {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.fitnessgeek.dao.IUserDAO#getSingleUser(java.lang.String)
-	 * Get a user object from the DB from the username.
+	 * 
+	 * @see com.fitnessgeek.dao.IUserDAO#getSingleUser(java.lang.String) Get a
+	 * user object from the DB from the username.
 	 */
 	@Override
 	public User getSingleUser(String userName) {
@@ -71,7 +74,14 @@ public class UserHbmDAO implements IUserDAO {
 		session.close();
 		return user;
 	}
-	
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.fitnessgeek.dao.IUserDAO#getSingleUser(java.lang.String) Get a
+	 * user object from the DB from the username.
+	 */
+
 	@Override
 	public List<User> getFilteredUsers(String query) {
 		Session session = HibernateUtil.getSessionFactory().openSession();

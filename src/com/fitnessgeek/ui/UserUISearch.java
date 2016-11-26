@@ -11,34 +11,44 @@ import org.springframework.context.annotation.Scope;
 import com.fitnessgeek.dto.User;
 import com.fitnessgeek.services.UserService;
 
+/**
+ * This class is used for our user search
+ *
+ */
 @Named
 @ManagedBean
 @Scope("session")
 public class UserUISearch {
-	
-	@Inject 
+
+	@Inject
 	private User user;
-	
+
 	@Inject
 	private UserService userService;
-	
+
 	private List<User> users;
-	
-	public String execute(){
+
+	/**
+	 * Do user search
+	 */
+	public String execute() {
 		setUsers(userService.getFilteredUsers(getUser().getUserName()));
-		
-		if(getUsers().size() < 1){
+
+		if (getUsers().size() < 1) {
 			return "noresults";
-		}
-		else{
+		} else {
 			return "usersearch";
 		}
 	}
 
-	public List<User> completeUser(String query){
+	/**
+	 * Get filtered list of users for auto complete
+	 *
+	 */
+	public List<User> completeUser(String query) {
 		return userService.getFilteredUsers(query);
 	}
-	
+
 	public List<User> getUsers() {
 		return users;
 	}

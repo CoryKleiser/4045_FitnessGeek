@@ -21,7 +21,7 @@
 				<h:outputLabel value="#{applicationIntroInfo.pictureWelcome}" />
 			</h2>
 			<h:form>
-				<p:remoteCommand name="onload" action="#{pictures.loadPicutres}"
+				<p:remoteCommand name="onload" action="#{picturesUI.loadPicutres}"
 					autoRun="true" />
 			</h:form>
 			<p:fieldset legend="Add a Gym Pic">
@@ -29,24 +29,24 @@
 					<p:growl id="growl" showDetail="true" sticky="false" />
 
 					<p:outputLabel value="Taken By" />
-					<p:inputText value="#{pictures.photo.contributor}" />
+					<p:inputText value="#{picturesUI.photo.contributor}" />
 					<br />
 
 
 					<p:outputLabel value="Date Taken" />
-					<p:calendar id="dateTaken" value="#{pictures.photo.dateTaken}" />
+					<p:calendar id="dateTaken" value="#{picturesUI.photo.dateTaken}" />
 					<br />
 
 
-					<p:fileUpload value="#{pictures.file}" mode="simple"
+					<p:fileUpload value="#{picturesUI.file}" mode="simple"
 						skinSimple="true" />
 					<br />
 					<p:commandButton value="Upload" ajax="false"
-						actionListener="#{pictures.upload}" />
+						actionListener="#{picturesUI.upload}" />
 				</h:form>
 			</p:fieldset>
 
-			<p:galleria value="#{pictures.photos}" var="image" panelWidth="500"
+			<p:galleria value="#{picturesUI.photos}" var="image" panelWidth="500"
 				panelHeight="313" showCaption="true">
 				<p:graphicImage name="images/#{image}" alt="#{image}"
 					title="#{image}" />

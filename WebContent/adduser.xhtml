@@ -7,52 +7,62 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 </h:head>
 
 <h:body>
 	<ui:composition template="template.xhtml">
 		<ui:define name="title">Register</ui:define>
-		
-		
+
+
 		<ui:define name="content">
 			<h1>Register</h1>
-				<h:form>
-					<p:growl id="growl" showDetail="true" sticky="false" />
-					
-					<p:outputLabel for="userNameInput" value="Username: "/>
-					<p:inputText id="userNameInput" value="#{user.userName}"/><br/>
-					
-					<!-- TODO:: hide password -->
-					<p:outputLabel for="passwordInput" value="Password: "/>
-					<p:inputText id="passwordInput" value="#{user.password}"/><br/>
-			    	
-			    	<p:outputLabel for="firstNameInput" value="First Name: "/>
-					<p:inputText id="firstNameInput" value="#{user.firstName}"/><br/>
+			<h:form>
+				<p:growl id="growl" showDetail="true" sticky="false" />
 
-			    	<p:outputLabel for="lastNameInput" value="Last Name: "/>
-					<p:inputText id="lastNameInput" value="#{user.lastName}"/><br/>
-					
-			    	<p:outputLabel for="emailInput" value="Email: "/>
-					<p:inputText id="emailInput" value="#{user.email}"/><br/>
+				<p:outputLabel for="userNameInput" value="Username: " />
+				<p:inputText id="userNameInput" value="#{user.userName}" />
+				<br />
 
-			    	<p:outputLabel for="userWeight" value="Your Weight "/>
-					<p:inputText id="userWeight" value="#{user.userWeight}"/><br/>
+				<!-- TODO:: hide password -->
+				<p:outputLabel for="passwordInput" value="Password: " />
+				<p:inputText id="passwordInput" value="#{user.password}" />
+				<br />
 
-			    	<p:outputLabel for="userHeightFeet" value="Your Height "/>
-			    	<h:outputText id="userHeightFeet" value="#{user.userHeightFeet}" style="padding-left: 10px" />'
-			    	<h:outputText id="userHeightInches" value="#{user.userHeightInches}" style="padding-left: 10px" />"
+				<p:outputLabel for="firstNameInput" value="First Name: " />
+				<p:inputText id="firstNameInput" value="#{user.firstName}" />
+				<br />
+
+				<p:outputLabel for="lastNameInput" value="Last Name: " />
+				<p:inputText id="lastNameInput" value="#{user.lastName}" />
+				<br />
+
+				<p:outputLabel for="emailInput" value="Email: " />
+				<p:inputText id="emailInput" value="#{user.email}" />
+				<br />
+
+				<p:outputLabel for="userWeight" value="Your Weight " />
+				<p:inputText id="userWeight" value="#{user.userWeight}" />
+				<br />
+
+				<p:outputLabel for="userHeightFeet" value="Your Height " />
+				<h:outputText id="userHeightFeet" value="#{user.userHeightFeet}"
+					style="padding-left: 10px" />'
+			    	<h:outputText id="userHeightInches"
+					value="#{user.userHeightInches}" style="padding-left: 10px" />"
 			        <p:outputPanel>
-			            <p:spinner id="userHeightFeetInput" value="#{user.userHeightFeet}">
-			                <p:ajax update="userHeightFeet" process="@this" />
-			            </p:spinner> feet <br/>
-   			            <p:spinner id="userHeightInchesInput" value="#{user.userHeightInches}">
-			                <p:ajax update="userHeightInches" process="@this" />
-			            </p:spinner> inches <br/>
-	       			</p:outputPanel>
-			    	
-		    	    <p:commandButton value="Submit" icon="ui-icon-check" update="growl" actionListener="#{addUser.execute}"/>
-	    		</h:form>
+					<p:spinner id="userHeightFeetInput" value="#{user.userHeightFeet}">
+						<p:ajax update="userHeightFeet" process="@this" />
+					</p:spinner> feet <br />
+					<p:spinner id="userHeightInchesInput"
+						value="#{user.userHeightInches}">
+						<p:ajax update="userHeightInches" process="@this" />
+					</p:spinner> inches <br />
+				</p:outputPanel>
+
+				<p:commandButton value="Submit" icon="ui-icon-check" update="growl"
+					actionListener="#{addUser.execute}" />
+			</h:form>
 		</ui:define>
 		<ui:define name="bottom"></ui:define>
 	</ui:composition>

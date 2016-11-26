@@ -7,27 +7,44 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 </h:head>
 
 <h:body>
 	<ui:composition template="template.xhtml">
 		<ui:define name="title">Fitness Geek</ui:define>
-		
-		
+
+
 		<ui:define name="content" styleClass="container col-lg-12 col-sm-12">
 			<h1>Fitness Geek</h1>
 			<h2>
-				<h:outputLabel value="#{applicationIntroInfo.welcome}"/>
+				<h:outputLabel value="#{applicationIntroInfo.welcome}" />
 			</h2>
-			<div class="col-lg-2 col-lg-offset-5 col-sm-6 col-sm-offset-3 col-xs-12">
+			<div
+				class="col-lg-2 col-lg-offset-5 col-sm-6 col-sm-offset-3 col-xs-12">
 				<div class="center col-sm-12 col-xs-12">
-					<p:inputText styleClass="loginInput col-lg-12 col-sm-12 col-xs-12" placeholder="Username" size="25" label="Please Enter Your Username" validatorMessage="Username is incorrect. Please try again." value="#{user.userName}"/>
-					<p:password styleClass="loginInput col-lg-12 col-sm-12 col-xs-12" placeholder="Password" size="25" label="Please Enter Your Password" validatorMessage="Password is incorrect. Please try again." value="#{user.password}"/>
-					<p:commandButton styleClass="btn btn-success login col-lg-5 col-sm-5 col-xs-5" value="Login" action="#{loginUser.execute}"/>
-					<p:commandButton styleClass="btn btn-info register col-lg-5 col-sm-5 col-xs-5 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1" value="Register" action="#{loginUser.register}"/>
-					<p:commandButton styleClass="btn facebook col-lg-5 col-sm-5 col-xs-5" value="Facebook" action="#{loginUser.facebookLogin}"/>
-					<p:commandButton styleClass="btn button google col-lg-5 col-sm-5 col-xs-5 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1" value="Google+" action="#{loginUser.googleLogin}"/>
+					<p:inputText styleClass="loginInput col-lg-12 col-sm-12 col-xs-12"
+						placeholder="Username" size="25"
+						label="Please Enter Your Username"
+						validatorMessage="Username is incorrect. Please try again."
+						value="#{user.userName}" />
+					<p:password styleClass="loginInput col-lg-12 col-sm-12 col-xs-12"
+						placeholder="Password" size="25"
+						label="Please Enter Your Password"
+						validatorMessage="Password is incorrect. Please try again."
+						value="#{user.password}" />
+					<p:commandButton
+						styleClass="btn btn-success login col-lg-5 col-sm-5 col-xs-5"
+						value="Login" action="#{loginUser.execute}" />
+					<p:commandButton
+						styleClass="btn btn-info register col-lg-5 col-sm-5 col-xs-5 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1"
+						value="Register" action="#{loginUser.register}" />
+					<p:commandButton
+						styleClass="btn facebook col-lg-5 col-sm-5 col-xs-5"
+						value="Facebook" action="#{loginUser.facebookLogin}" />
+					<p:commandButton
+						styleClass="btn button google col-lg-5 col-sm-5 col-xs-5 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1"
+						value="Google+" action="#{loginUser.googleLogin}" />
 				</div>
 			</div>
 		</ui:define>

@@ -7,45 +7,45 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 </h:head>
 
 <h:body>
 	<ui:composition template="template.xhtml">
 		<ui:define name="title">Fitness Geek</ui:define>
-		
-		
+
+
 		<ui:define name="content">
 			<h1>Users</h1>
 			<p:dataTable var="userResult" value="#{userUI.users}">
-			    <p:column headerText="User ID">
-			        <h:outputText value="#{userResult.userId}" />
-			    </p:column>
-			    
-			    <p:column headerText="Username">
-			        <h:outputText value="#{userResult.userName}" />
-			    </p:column>
-			 
-			    <p:column headerText="First Name">
-			        <h:outputText value="#{userResult.firstName}" />
-			    </p:column>
-			 
-			    <p:column headerText="Last Name">
-			        <h:outputText value="#{userResult.lastName}" />
-			    </p:column>
-			 
-			    <p:column headerText="Weight">
-			        <h:outputText value="#{userResult.userWeight}" />
-			    </p:column>
-			    
-			    <p:column headerText="Height">
-			        <h:outputText value="#{userResult.userHeightFeet}" />'
+				<p:column headerText="User ID">
+					<h:outputText value="#{userResult.userId}" />
+				</p:column>
+
+				<p:column headerText="Username">
+					<h:outputText value="#{userResult.userName}" />
+				</p:column>
+
+				<p:column headerText="First Name">
+					<h:outputText value="#{userResult.firstName}" />
+				</p:column>
+
+				<p:column headerText="Last Name">
+					<h:outputText value="#{userResult.lastName}" />
+				</p:column>
+
+				<p:column headerText="Weight">
+					<h:outputText value="#{userResult.userWeight}" />
+				</p:column>
+
+				<p:column headerText="Height">
+					<h:outputText value="#{userResult.userHeightFeet}" />'
 			        <h:outputText value="#{userResult.userHeightInches}" />"
 			    </p:column>
-			    
-			    <p:column headerText="Email">
-			        <h:outputText value="#{userResult.email}" />
-			    </p:column>
+
+				<p:column headerText="Email">
+					<h:outputText value="#{userResult.email}" />
+				</p:column>
 			</p:dataTable>
 		</ui:define>
 		<ui:define name="bottom"></ui:define>

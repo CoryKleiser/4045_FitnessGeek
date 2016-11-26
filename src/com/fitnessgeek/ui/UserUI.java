@@ -34,6 +34,11 @@ public class UserUI {
 
 	private Set<User> users;
 
+	/**
+	 * This method returns a list of all our users
+	 * 
+	 * @return Set<User>
+	 */
 	public Set<User> getUsers() {
 		users = userService.showAllUsers();
 		return users;

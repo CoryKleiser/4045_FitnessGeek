@@ -8,59 +8,70 @@
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- 	<h:outputStylesheet library="css" name="default.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css"/>
- 	<h:outputStylesheet library="css" name="cssLayout.css" />
-	<h:outputStylesheet library="css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" name="bootstrap.css"/>
-	<h:outputStylesheet library="css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" name="fontawesome.css"/>
-	<h:outputStylesheet library="js" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" name="bootstrap.js"/>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
+	<h:outputStylesheet library="css" name="default.css" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		type="text/css" />
+	<h:outputStylesheet library="css" name="cssLayout.css" />
+	<h:outputStylesheet library="css"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		name="bootstrap.css" />
+	<h:outputStylesheet library="css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+		name="fontawesome.css" />
+	<h:outputStylesheet library="js"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		name="bootstrap.js" />
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
 	<link rel="stylesheet" href="css/default.css" type="text/css" />
-	<title><ui:insert name="title"></ui:insert></title>	
+	<title><ui:insert name="title"></ui:insert></title>
 </h:head>
 <!-- :: Implement Style Sheets -->
 
-	
+
 <h:body>
 	<div id="top" class="top navbar navbar-fixed-top navbar-default">
-	 	<div class="container">
-		
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="index.xhtml">FitnessGeek</a>
-		</div>
-		
-		<div class="collapse navbar-collapse" id="mainNav">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.xhtml">Home</a></li>
-				<li><a href="performance.xhtml">User's Performance</a></li>
-				<li><a href="activities.xhtml">Activity Manager</a></li>
-				<li><a href="pictures.xhtml">Gym Pictures</a></li>
-			</ul>
-			<p class="navbar-text navbar-right">Signed in as <a href="signin.xhtml" class="navbar-link">Username goes here</a></p>
-		</div>
-		
+		<div class="container">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#mainNav" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.xhtml">FitnessGeek</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="mainNav">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.xhtml">Home</a></li>
+					<li><a href="activities.xhtml">Activity Manager</a></li>
+					<li><a href="pictures.xhtml">Gym Pictures</a></li>
+				</ul>
+				<p class="navbar-text navbar-right">
+					Signed in as <a href="signin.xhtml" class="navbar-link">Username
+						goes here</a>
+				</p>
+			</div>
+
 		</div>
 	</div>
 	<div id="content" class="content">
-		 
+
 		<ui:insert name="content">Main Content</ui:insert>
 	</div>
 	<div id="bottom" class="bottom">
-		<h:link styleClass="button footer" action="index.html" value="Home"/>
+		<h:link styleClass="button footer" action="index.html" value="Home" />
 		<p>&copy;2016 FitnessGeek</p>
 	</div>
 </h:body>
 <footer class="footer navbar-default navbar-fixed-bottom">
-    <div class="container">
-		<h:link styleClass="button footer" action="index.html" value="Home"/>
-		<p>&copy;2016 FitnessGeek</p>
-    </div>
+<div class="container">
+	<h:link styleClass="button footer" action="index.html" value="Home" />
+	<p>&copy;2016 FitnessGeek</p>
+</div>
 </footer>
 
 </html>

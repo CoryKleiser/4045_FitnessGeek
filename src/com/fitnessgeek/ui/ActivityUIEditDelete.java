@@ -1,7 +1,5 @@
 package com.fitnessgeek.ui;
 
-import java.util.List;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
@@ -13,20 +11,24 @@ import org.springframework.context.annotation.Scope;
 
 import com.fitnessgeek.dto.Activity;
 import com.fitnessgeek.services.IUserService;
+
 @Named
 @ManagedBean
 @Scope("session")
 public class ActivityUIEditDelete {
-	
-	
+
 	private Activity activity;
 
 	@Inject
 	private IUserService userService;
 
-
 	final static Logger logger = Logger.getLogger(ActivityUI.class);
 
+	/**
+	 * edit and activity
+	 * 
+	 * @return User
+	 */
 	public String executeEdit() {
 		logger.info("INFO:: Entering the edit activity execute method");
 		FacesContext currentInstance = FacesContext.getCurrentInstance();
@@ -34,10 +36,15 @@ public class ActivityUIEditDelete {
 		currentInstance.addMessage(null, fm);
 
 		userService.update(getActivity());
-		
+
 		return "Edit";
 	}
 
+	/**
+	 * delete an activity
+	 * 
+	 * @return User
+	 */
 	public String executeDelete() {
 		// TODO:: Form Validation
 		logger.info("INFO:: Entering the delete activity execute method");
@@ -70,7 +77,6 @@ public class ActivityUIEditDelete {
 			currentInstance.addMessage(null, fm);
 			returnMessage = "nullentry";
 		}
-		// TODO:: navigate to home page on success/handle errors on fail
 		return returnMessage;
 	}
 
